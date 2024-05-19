@@ -1,0 +1,14 @@
+﻿  enemies.cpp
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(8,25): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(10,15): warning C4305: =: усечение из "double" в "float"
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(44,27): warning C4390: ";": обнаружен пустой контролируемый оператор; это правильно?
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(84,79): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(87,67): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(87,32): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(94,15): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(95,102): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(103,16): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(104,100): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+  Star Dust.vcxproj -> C:\Users\prikh\source\repos\Star Dust\Debug\Star Dust.exe
+  "pwsh.exe" не является внутренней или внешней
+  командой, исполняемой программой или пакетным файлом.
