@@ -10,7 +10,8 @@
 
 #define HUB_SIZE		GetScreenHeight() / 36
 
-#define ASTEROID_COUNT	100
+#define ASTEROID_COUNT			50
+#define SCALAR_PLAYER_MOVING	0.95
 
 #define START			0
 #define GAMEHUB			1
@@ -51,11 +52,11 @@ int main()
 	ClearBackground(BLACK);
 	for (int i = 0; i < STARS_COUNT; i++)
 		DrawCircle(GetRandomValue(0, BackGroundR.texture.width), GetRandomValue(0, BackGroundR.texture.height), GetRandomValue(MIN_BGSTAR_SIZE, MAX_BGSTAR_SIZE), { 230,230,255,255 });
-	DrawCircleLines(BackGroundR.texture.width / 2, BackGroundR.texture.height / 2, MAP_SZE / 2, RED);
+	//DrawCircleLines(BackGroundR.texture.width / 2, BackGroundR.texture.height / 2, MAP_SZE / 2, RED);
 
 	EndTextureMode();
 
-	//TEsting asteroid
+	//Testing asteroid
 	SolarSystem testSystem;
 
 	for (int i = 0; i < ASTEROID_COUNT; i++)
@@ -80,7 +81,7 @@ int main()
 		{
 			UpdatePlayer_n_System(testSystem, main_player);
 
-			if (!CheckCollisionCircles({ 0,0 }, MAP_SZE / 2, main_player.getPos(), SHIELD_SIZE))	main_player.ReturnHome();
+			//if (!CheckCollisionCircles({ 0,0 }, MAP_SZE / 2, main_player.getPos(), SHIELD_SIZE))	main_player.ReturnHome();
 
 			observer.target = main_player.getPos();
 
@@ -91,6 +92,15 @@ int main()
 
 			if (IsKeyDown(KEY_SPACE))	testSystem.asteroids[0].SendBreakingTick();
 
+			float wheel = GetMouseWheelMove();
+			if (wheel != 0)
+			{
+				// Zoom increment
+				float scaleFactor = 1.0f + (0.25f * fabsf(wheel));
+				if (wheel < 0) scaleFactor = 1.0f / scaleFactor;
+				observer.zoom = Clamp(observer.zoom * scaleFactor, 0.157f, 64.0f);
+			}
+
 			//testAst.Update();
 
 			BeginDrawing();
@@ -98,7 +108,7 @@ int main()
 			BeginMode2D(observer);
 
 			ClearBackground(BLACK);
-			DrawTexture(BackGroundR.texture, -BackGroundR.texture.width / 2, -BackGroundR.texture.height / 2, WHITE);
+			DrawTextureV(BackGroundR.texture, Vector2Add({ -(float)BackGroundR.texture.width / 2, -(float)BackGroundR.texture.height / 2 }, Vector2Scale(main_player.getPos(), SCALAR_PLAYER_MOVING)), WHITE);
 
 			for (int i = 0; i < testSystem.asteroids.size(); i++)	testSystem.asteroids[i].Draw();
 			//DrawCircleV(testSystem.asteroids[0].getPos(), 10, BLUE);
@@ -114,8 +124,8 @@ int main()
 			DrawFPS(10, HUB_SIZE);
 			DrawText(std::to_string(main_player.getRotation()).c_str(), 10, HUB_SIZE * 2, HUB_SIZE * 2 / 3, DARKGREEN);
 
-			DrawText(std::to_string(testSystem.asteroids[0].getPos().x).c_str(), 10, HUB_SIZE * 3, HUB_SIZE * 2 / 3, DARKGREEN);
-			DrawText(std::to_string(testSystem.asteroids[0].getPos().y).c_str(), 10, HUB_SIZE * 4, HUB_SIZE * 2 / 3, DARKGREEN);
+			DrawText(std::to_string(observer.zoom).c_str(), 10, HUB_SIZE * 3, HUB_SIZE * 2 / 3, DARKGREEN);
+			//DrawText(std::to_string(testSystem.asteroids[0].getPos().y).c_str(), 10, HUB_SIZE * 4, HUB_SIZE * 2 / 3, DARKGREEN);
 
 			EndDrawing();
 		}

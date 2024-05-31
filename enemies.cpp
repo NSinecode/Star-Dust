@@ -4,10 +4,11 @@ Asteroid::Asteroid()
 {
 	textureEffect = WHITE;
 	Pos = { 300,200 };
-	Vel = Ax = { 0,0 };
+	Vel = { (float)GetRandomValue(MIN_AST_VEL,MAX_AST_VEL),(float)GetRandomValue(MIN_AST_VEL,MAX_AST_VEL) };
+	Ax = { 0,0 };
 	radius = GetRandomValue(MIN_ASTEROID_R, MAX_ASTEROID_R);
 	rotation = AngleVel = AngleAx = 0;
-	AngleAx = 0.1;
+	AngleAx = GetRandomValue(-MAX_ASTEROID_AAX*100, MAX_ASTEROID_AAX*100)/100;
 
 	mass = powf(radius, 3) * ASTEROID_DENSITY * 900000;
 
@@ -48,7 +49,7 @@ void Asteroid::Update()
 
 void Asteroid::RandomPos(int width, int heigh)
 {
-	Pos = { (float)GetRandomValue(0,width),(float)GetRandomValue(0,heigh) };
+	Pos = { (float)GetRandomValue(-width,width),(float)GetRandomValue(-heigh,heigh) };
 }
 
 //void Asteroid::killed_by_player(Player& other)
@@ -83,17 +84,20 @@ void Asteroid::GenerateTexture()
 	//Res generating
 	for (int i = 0; i < RES_COUNT; i++)		resourses[i] = GetRandomValue(0, radius / 4);
 
+	Texture2D Perlin = LoadTextureFromImage(GenImagePerlinNoise(2 * (MAX_ASTEROID_CURVE + radius), 2 * (MAX_ASTEROID_CURVE + radius), 0, 0, 1));
+
 	//Randomly generate texture
 	texture = LoadRenderTexture(2 * (MAX_ASTEROID_CURVE + radius), 2 * (MAX_ASTEROID_CURVE + radius));
 	BeginTextureMode(texture);
 	Vector2 PosText = { MAX_ASTEROID_CURVE + radius,MAX_ASTEROID_CURVE + radius };
 
 	DrawCircleV(PosText, radius, GRAY);
-	for (int i = 0; i < CURVES_COUNT; i++)
+	DrawTextureV(Perlin, { 0,0 }, { 130,130,130,160 });
+	/*for (int i = 0; i < CURVES_COUNT; i++)
 	{
 		float Angle = GetRandomValue(0, 62830);
 		DrawCircleV(Vector2Add(PosText, Vector2Scale({ cosf(Angle), sinf(Angle) }, radius)), GetRandomValue(MIN_ASTEROID_CURVE, MAX_ASTEROID_CURVE), col[GetRandomValue(0, 1)]);
-	}
+	}*/
 
 	//Drawing resourses
 	for (int i = 0; i < RES_COUNT; i++)
@@ -106,11 +110,16 @@ void Asteroid::GenerateTexture()
 	}
 
 	EndTextureMode();
+
+	UnloadTexture(Perlin);
 }
 
 void Asteroid::Draw()
 {
-	DrawTextureEx(texture.texture, routedPOS(), 0, 1, textureEffect);
+	//DrawTextureV(texture.texture, Pos, textureEffect);
+	Rectangle sourceREC = { 0,0,texture.texture.width,texture.texture.height };
+	//Rectangle destRec = { , screenHeight / 2.0f, frameWidth * 2.0f, frameHeight * 2.0f };
+	DrawTexturePro(texture.texture, sourceREC, { Pos.x,Pos.y,(float)texture.texture.width,(float)texture.texture.height }, { MAX_ASTEROID_CURVE + radius,MAX_ASTEROID_CURVE + radius }, rotation, textureEffect);
 }
 
 Vector2 Asteroid::routedPOS()

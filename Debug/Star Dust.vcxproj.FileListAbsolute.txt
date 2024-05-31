@@ -1,3 +1,1 @@
-C:\Users\prikh\source\repos\Star Dust\Debug\Star Dust.vcxproj.CopyComplete
 C:\Users\prikh\source\repos\Star Dust\Debug\Star Dust.exe
-C:\Users\prikh\source\repos\Star Dust\Debug\raylib.dll

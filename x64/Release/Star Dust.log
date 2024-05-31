@@ -1,0 +1,28 @@
+﻿  enemies.cpp
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(9,25): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(11,71): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(45,27): warning C4390: ";": обнаружен пустой контролируемый оператор; это правильно?
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(85,79): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(87,99): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(87,64): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(90,67): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(90,32): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(107,16): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(108,100): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(120,45): warning C4838: Преобразование из "int" в "float" требует сужающего преобразования.
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(120,45): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(120,67): warning C4838: Преобразование из "int" в "float" требует сужающего преобразования.
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(120,67): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+  player.cpp
+  SSystem.cpp
+C:\Users\prikh\source\repos\Star Dust\SSystem.cpp(34,18): warning C4244: return: преобразование "double" в "float", возможна потеря данных
+  Star Dust.cpp
+C:\Users\prikh\source\repos\Star Dust\Star Dust.cpp(54,121): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\Star Dust.cpp(111,187): warning C4305: аргумент: усечение из "double" в "float"
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 175 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  Star Dust.vcxproj -> C:\Users\prikh\source\repos\Star Dust\x64\Release\Star Dust.exe
+  "pwsh.exe" не является внутренней или внешней
+  командой, исполняемой программой или пакетным файлом.

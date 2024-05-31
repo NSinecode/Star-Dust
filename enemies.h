@@ -5,14 +5,17 @@
 #include <string>
 #include <vector>
 
-#define MIN_ASTEROID_R		80
-#define MAX_ASTEROID_R		400
+#define MIN_ASTEROID_R		40
+#define MAX_ASTEROID_R		350
 #define MIN_ASTEROID_CURVE	1
 #define MAX_ASTEROID_CURVE	4
 #define CURVES_COUNT		400
+#define MIN_AST_VEL			-50
+#define MAX_AST_VEL			50
 #define RES_SIZE			2
+#define MAX_ASTEROID_AAX	5
 
-#define ASTEROID_DENSITY	2000
+#define ASTEROID_DENSITY	10000
 
 //res
 #define RES_COUNT	4

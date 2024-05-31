@@ -1,0 +1,18 @@
+﻿  enemies.cpp
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(9,25): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(11,71): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(45,27): warning C4390: ";": обнаружен пустой контролируемый оператор; это правильно?
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(85,79): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(87,99): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(87,64): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(90,67): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(90,32): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(107,16): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(108,100): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(120,45): warning C4838: Преобразование из "int" в "float" требует сужающего преобразования.
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(120,45): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(120,67): warning C4838: Преобразование из "int" в "float" требует сужающего преобразования.
+C:\Users\prikh\source\repos\Star Dust\enemies.cpp(120,67): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+  Star Dust.vcxproj -> C:\Users\prikh\source\repos\Star Dust\x64\Debug\Star Dust.exe
+  "pwsh.exe" не является внутренней или внешней
+  командой, исполняемой программой или пакетным файлом.
